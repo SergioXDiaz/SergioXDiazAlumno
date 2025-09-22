@@ -18,17 +18,14 @@ una variable es un espacio que se reserva en memoria
 
 
 Ejercicio 3: Variables */
-$txt = "Hello World 22 de Septiembre";
-$x = 5;
-echo $x;
-echo "El valor de mi varibale txt es : ".$txt;
+$edad= 25;
+$nombre = "Sergio";
+echo "<br><br><br>";
+echo "Mi nombre es " .$nombre, " y mi edad es " .$edad, ".";
+
 ?> <!-- FIN DEL COMENTRIO EN CODIGO DE PHP -->
 
 
 
 </body>
 </html>
-
-mODIFICACION MIA DESDE LA WEB DE GITHUB EL SERGYYYY
-PERFECTO
-
