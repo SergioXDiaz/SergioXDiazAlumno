@@ -20,8 +20,9 @@ una variable es un espacio que se reserva en memoria
 Ejercicio 3: Variables */
 $edad= 25;
 $nombre = "Sergio";
-echo "<br><br><br>";
-echo "Mi nombre es " .$nombre, " y mi edad es " .$edad, ".";
+echo "<br><br><br>"; /*Salto de línea*/
+echo "Mi nombre es " .$nombre, " y mi edad es " .$edad, "."; /*Nada que vaya haciendo comentarios sobre poner punto para poder concatenar
+las frases cómicas*/
 
 ?> <!-- FIN DEL COMENTRIO EN CODIGO DE PHP -->
 
