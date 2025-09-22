@@ -21,6 +21,7 @@ Ejercicio 3: Variables */
 $txt = "Hello World 22 de Septiembre";
 $x = 5;
 echo $x;
+echo "El valor de mi varibale txt es : ".$txt;
 ?> <!-- FIN DEL COMENTRIO EN CODIGO DE PHP -->
 
 
