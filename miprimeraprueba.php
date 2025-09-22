@@ -25,8 +25,7 @@ echo "El valor de mi varibale txt es : ".$txt;
 ?> <!-- FIN DEL COMENTRIO EN CODIGO DE PHP -->
 
 
-<h1> Mi primera web </h1> <!-- Sino tengo Apache levantado, no irá hace falta que funcione el servidor web
-para que te lea el PHP --> 
+
 </body>
 </html>
 
