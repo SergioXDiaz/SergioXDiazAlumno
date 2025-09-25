@@ -94,7 +94,9 @@ echo "<h1> Ejercicio de arrays de fruta </h1>";
 //Ejercicio Ejemplo de arrays parte 2
 $fruta = array("Pera", 3.4, 20);
 
-echo "<br>La " .$fruta[0], " está a " .$fruta[1], "\€ el Kg."
+echo "<br>La " .$fruta[0], " está a " .$fruta[1], "\€ el Kg.";
+
+//HACER DOS REPOSITORIOS DIFERENTES Y TENER D
 ?>
 
 
