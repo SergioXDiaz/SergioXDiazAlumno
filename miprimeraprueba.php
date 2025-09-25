@@ -25,7 +25,17 @@ echo "Mi nombre es " .$nombre, " y mi edad es " .$edad, "."; /*Nada que vaya hac
 las frases cómicas*/
 
 
+
 //EJERCICIO 4: VARIBALES Y CONCATENACIÓN A LO ANTERIOR, VAMOS BASICAMENTE LO MISMO QUE LO ANTERIOR.
+
+//EJERCICIO 5: CONCATENACIÓN Y MEZCLA DE VARIABLES CON HTML
+
+//Declaración de variables
+$txt1="Learn PHP";
+$txt2="W3Schools.com";
+
+echo '<h2>' .$txt1 . '</h2>';
+echo '<h1>' .$txt2 . '</h1>';
 ?> <!-- FIN DEL COMENTRIO EN CODIGO DE PHP -->
 
 
