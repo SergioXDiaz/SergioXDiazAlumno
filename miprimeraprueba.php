@@ -41,8 +41,62 @@ echo '<h1>' .$txt2 . '</h1>';
 $x = 7;
 echo "Este es el símbolo del dólar: y para que funcione hace falta contrabarra: \$";
 echo "Para que sea un salto de línea será: \n"; //El salto de línea no funciona con el contrabarra 
-echo "Ves cómo ha saltado la línea julandrón";
+echo "Ves cómo NO ha saltado la línea julandrón, no funciona el contrabarra N mejor con el brrrrrr";
+echo "<br> JAJAJAJ toma otro carácter especial, perro : ' ";
+
+//Tipos de variables : 
+// $teatro = "Tipo string";
+//$Entero = 5;
+/* $decimal = 10.5;
+$bool = Sirve para indicar si es verdadero o falso
+$y = TRUE; */
+
+//Esto sirve para pruebas internas
+$variableBool = true;
+$variableBool2= TRUE;
+
+var_dump($variableBool);
+
+$m = true;
+$tipoDato = "var_dump($m)"; //Se le mete dentro la variable para ver el tipo de datos
+
+$prueba = 5;
+echo "<br>El tipo de dato de la variable \$m es: $tipoDato";
+echo "<br> $tipoDato";
+
+//Definicion de los arrays simples. Un array es un conjunto de valores dentro de la misma variable:
+// cars 0= volvo 1= BMW, toyota=2: Lo suyo es acceder a los arrays a través de posiciones concretas.
+//La varuable es como una caja en la que se almacena un único alor, y ahora admito N valores, que son cómo un índice, y este índice coincide
+//en la posición exacta en la que se encuentra el elemento.
+
+
 ?> <!-- FIN DEL COMENTRIO EN CODIGO DE PHP -->
+
+<?php
+
+echo "<h1> Ejercicio de arrays de coches </h1>";
+//ARAYS AQUÍ SEPARADO MEJOR
+$cars = array("Volvo", "BMW", "Toyota");
+echo "<br><br>";
+var_dump($cars);
+
+//SELECCIÓN DE LO QUE QUIERO CONCRETAMENTE CON EL ARRAY
+echo "<br> Mi coche es un: " .$cars[2];
+
+//Ejercicio de ejemplo de arrays
+echo "<h1> Ejercicio de arrays de edad </h1>";
+$alumno = array("Sergio", "Diaz Romero", 18, 9.8);
+echo "<br><br>";
+
+echo "<br>El alumno " .$alumno[0], $alumno[1], " con edad de ", $alumno[2], " ha aprobado con un " .$alumno[3] ;
+
+echo "<h1> Ejercicio de arrays de fruta </h1>";
+//Ejercicio Ejemplo de arrays parte 2
+$fruta = array("Pera", 3.4, 20);
+
+echo "<br>La " .$fruta[0], " está a " .$fruta[1], "\€ el Kg."
+?>
+
 
 
 
