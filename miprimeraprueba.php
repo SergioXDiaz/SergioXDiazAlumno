@@ -36,6 +36,10 @@ $txt2="W3Schools.com";
 
 echo '<h2>' .$txt1 . '</h2>';
 echo '<h1>' .$txt2 . '</h1>';
+
+//Si quiero meter carácteres especiales necesito ponerle contrabarra \
+$x = 7;
+echo "Este es el símbolo del dolor: \$";
 ?> <!-- FIN DEL COMENTRIO EN CODIGO DE PHP -->
 
 
