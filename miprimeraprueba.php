@@ -39,7 +39,9 @@ echo '<h1>' .$txt2 . '</h1>';
 
 //Si quiero meter carácteres especiales necesito ponerle contrabarra \
 $x = 7;
-echo "Este es el símbolo del dolor: \$";
+echo "Este es el símbolo del dólar: y para que funcione hace falta contrabarra: \$";
+echo "Para que sea un salto de línea será: \n"; //El salto de línea no funciona con el contrabarra 
+echo "Ves cómo ha saltado la línea julandrón";
 ?> <!-- FIN DEL COMENTRIO EN CODIGO DE PHP -->
 
 
