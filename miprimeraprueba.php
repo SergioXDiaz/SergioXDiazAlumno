@@ -97,6 +97,59 @@ $fruta = array("Pera", 3.4, 20);
 echo "<br>La " .$fruta[0], " está a " .$fruta[1], "\€ el Kg.";
 
 //HACER DOS REPOSITORIOS DIFERENTES Y TENER D
+
+// UTILIZAR ** ESO ES EL EXPONENTE
+//5%3=2; EL MODULO ES EL RESTO DE LA DIVISION
+//usar acumuladores para las PHP operators, x+=y
+/* Como conocer si dos valores son semejantes 3 == 5, usar el doble igual para comporbar si funnciona*/
+// var_dump dice el tipo de dato y si es verdadero o falso.
+/*
+
+UN IGUAL ES ASINGACION =
+== COMPARACIÓN DEL VALOR 
+=== COMPARACIÓN DEL VALOR Y DEL TIPO.
+*/
+$variable031025 = 101;
+$variable0310252 = 100;
+/*!= <> //quiere decir que no son iguales*/
+var_dump($variable031025 == $variable0310252);
+
+
+/*EJEMPLO DE COMO FUNCIONA LOS COMPARADORES EN PHP.
+X <=> Y | 1 ->   X > Y
+        | 0 ->  X= 0
+        | -1 ->  X < Y
+        VALOR QUE       SIGNIFICADO
+        DEVUELVE
+*/
+/*Ejercicio de condicionales*/
+
+$edadalumnoPablo = 17;
+$edadalumnoPadrePablo = 60;
+echo "<br> <h1> Ejercicio de condicionales </h1>";
+
+    if ($edadalumnoPablo > 18) {
+             echo "<br>Puede salir del centro tremendo ganador";
+    }
+
+    if ($edadalumnoPablo < 18) {
+            echo "<br>No puede salir, tremendo cuck";
+    }
+
+echo "<br> <h1> Ejercicio de condicionales 2 </h1>";
+
+     if ($edadalumnoPablo >= 18 && $edadalumnoPablo <35){
+     
+             echo "Puede solicitar beca";
+    }
+    else { //Sino cumple la condición del if
+        echo "No puede solicitar beca, porque es menor de edad o mayor o igual a 35 años";
+
+    }
+
+    if ($edadalumnoPablo < 18 ) {
+        echo "No puede salir al recreo";
+    }
 ?>
 
 
