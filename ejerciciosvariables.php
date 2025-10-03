@@ -12,6 +12,19 @@
 $Notas = array(5,3,2,7,10,9,8,2,4);
 
 
+$aprobados = Count(array_filter($Notas, function ($nota) {
+    return $nota >= 5;
+}));
+
+$suspensos = Count($Notas) - $aprobados;
+    if ($aprobados)  {
+        echo "<br>El numero de aprobados es " .$aprobados;
+    }
+
+    if ($suspensos) {
+        echo "<br>El numero de suspensos es " .$suspensos;
+    }
+
 
 //EL ARRAYS DE NOTAS CONTARÁ CON LAS NOTAS MENCIONADAS.
 //Debemos tener el número de $aprobados debe mostrar que el numero de notas aprobadas 
@@ -27,6 +40,13 @@ Si el precio de una determinada fruta es mayor o igual a 4:
     Sino, incremento de un 5% el precio y actualizo.
 
 */
+
+$frutas = array(10, 11.3, 1.28, 4.7, 2);
+
+
+
+
+
 /*Array ejercicio1 => Calcular la media
     -> Si la media es <5
         $Calificacion contendrá "SUSPENSO"
