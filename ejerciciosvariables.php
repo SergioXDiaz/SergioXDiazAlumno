@@ -26,6 +26,7 @@ $suspensos = Count($Notas) - $aprobados;
     }
 
 
+
 //EL ARRAYS DE NOTAS CONTARÁ CON LAS NOTAS MENCIONADAS.
 //Debemos tener el número de $aprobados debe mostrar que el numero de notas aprobadas 
 // es 5
@@ -41,10 +42,13 @@ Si el precio de una determinada fruta es mayor o igual a 4:
 
 */
 
-$frutas = array(10, 11.3, 1.28, 4.7, 2);
 
-
-
+//$frutas = array(10, 11.3, 1.28, 4.7, 2);
+/*
+$precioKG = array(10, 11.3, 1.28, 4.7, 2);
+if ($precioKG[0] >= 4) {
+    $precio[0] = $precio[0] * 0.90; } 
+*/
 
 
 /*Array ejercicio1 => Calcular la media
@@ -55,6 +59,16 @@ $frutas = array(10, 11.3, 1.28, 4.7, 2);
     -> Si la media es 9 o 10 -> "SOBRESALIENTE"
 
 */
+
+$notas2 = array(5,3,2,7,10,9,8,2,4);
+$media = 0;
+$calificacion = "";
+$media = ($notas2[0] + $notas2[1] + $notas2[2] + $notas2[3] + $notas2[4] +  $notas2[5] + $notas2[6] + $notas2[7] + $notas2[8]) / 9;
+
+
+echo $media; 
+
+
 ?>  
 
 
