@@ -11,7 +11,7 @@
         $seguidas = 0;
         $tiradas = 0;
 
-    while ($dobles <3){
+    while ($dobles < 3){
         $m1=rand(0,1); //los numeros generan por los milisegundos
         $m2=rand(0,1);
         $tiradas++;
@@ -20,7 +20,7 @@
     }
     //Reseteo del contador de dobles.
 
-    
+
 
     ?>
 </body>
