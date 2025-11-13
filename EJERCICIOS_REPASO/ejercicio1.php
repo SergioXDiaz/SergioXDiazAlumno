@@ -8,7 +8,7 @@
 <body>
     <?php 
 
-    $numero = readline("Introduce un número: ");
+    $numero = "8";
 
     if ($numero < 10) {
         echo "El número es menor que 10 <br>";
