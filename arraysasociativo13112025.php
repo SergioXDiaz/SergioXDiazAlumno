@@ -24,10 +24,18 @@
     $media =( $arrayalumno["ADSGB"] + $arrayalumno["INWEB"] + $arrayalumno["PHP"] + $arrayalumno ["SRI"] ) / 4;
     
     echo "El nombre del alumno es" .$arrayalumno["nombre"], "y el apellido es" .$arrayalumno["apellido"], "y su media de notas es " 
-    .$media;
+    .$media,"<br>";
 
     
-    
+    $zapatos =array( "marca"=> "nike", "color"=>"azul",
+    "precio"=> 48, "stock"=> 9);
+    foreach ($zapatos as $x=>$y)
+        //me va a decir que $x vale marca y $y vale nike, y asi sucesivamente
+
+    {
+        echo "<br>Etiqueta $x : Etiqueta $y <br>";
+        
+    }
     ?>
 </body>
 </html>
