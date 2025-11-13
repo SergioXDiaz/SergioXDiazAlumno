@@ -35,7 +35,26 @@
     {
         echo "<br>Etiqueta $x : Etiqueta $y <br>";
         
+    } 
+
+    foreach ($arrayalumno as $etiqueta => $valor){
+        if ($etiqueta == "ADSGB" OR $etiqueta =="INWEB"){
+            echo "Mi nota con agela en la asignatura " .$etiqueta, " es " .$valor, ".<br>"; 
+        } 
     }
+
+    //Quiero filtrar el que esta para saber si es un tipo de datos.
+
+    //FUNCTION IS NUMERIC, EN LA PAGINA DE PHPNET, TE DAN DATOS DE VERDADERO FALSO, Y ESO ES LO QUE CALCULA
+    //EL SHURRA.https://www.php.net/manual/en/function.is-numeric.php
+
+    //crear un array de producto, que tenga nombre, caracteristicas, precio, stock,etc, con diferentes campos
+    //$pera, $naranja, $platano, $nombre => producto, descripcio
+
+    //las varibales seran $pera, $manzana, $naranja, $platano y el nombre sera nmombre, kilos, precios, contientes, acceder
+    //al precio de esos productyos.
+
+    
     ?>
 </body>
 </html>
