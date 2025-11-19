@@ -45,6 +45,38 @@
     echo "Numero 1 = numero 1 + numero 2 es igual a " .$num1;
 
     //ERROR DE NOVATO, UN IGUAL ES UN COMPARADOR DE ASIGNACIÓN MIENTRAS QUE UNO == ES UN COMPARADOR DE DOS LÍNEAS
+    //El distinto es el != es el símbolo de admiración con el igual
+    // <> tambien podemos indicar distinto así
+    // === Intenta comparar que el valor sea igual y del mismo tipo
+    echo "<h1> Ejemplos de comparadores </h1>";
+
+    $num4 = 5;
+    $num5 = 10;
+    $num6 = 5;
+    $valor1= "5";
+
+    //Operadores de comparación
+    if ($num4 == $num5 ) {
+        echo "Son iguales el numero4 en tu culo mi aparato y el 5, por el culo te la hinco <br>";
+    } else {
+        echo "No son iguales, sube a debatir shurra. <br>";
+    }
+
+
+    echo "<br><b>Comparación de diferentes</b><br><br>";
+     if ($num4 != $num5 ) {
+        echo "Son diferentes <br>";
+    } else {
+        echo "Son iguales, sube a debatir shurra. <br>";
+    }
+
+    echo "<h1>Comparación de valores exactamente idénticos</h1>";
+    if ($num4 === $num6){
+        echo "Los valores num1 y valor 1 son idénticos";
+    }
+    else {
+        echo "No son idénticos";
+    }
     ?>
 </body>
 </html>
