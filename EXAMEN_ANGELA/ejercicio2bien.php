@@ -50,11 +50,35 @@
     $mes = $f[1];
     $ano = $f[2];
 
+     if (strlen($dia) == 1){
+        $dia = "0" .$dia;
+    }
+
     if (strlen($mes) == 1){
         $mes = "0" .$mes;
     }
-    
 
+
+    //SNi tenga o no letra quiero pos5, 6 y 7
+    $usuario = substr ($nombre, 0,1);
+    $dni = substr($dni, 5, 3);
+    echo "<br> Dni: " .$dni . "<br>";
+    $usuario = $usuario . substr($apellido1, 0, 3);
+    $usuario = $usuario . substr($apellido2, 0, 3);
+    echo "<br><br> usuario" .$usuario;
+
+    if ((2025 - $ano) >= 18) {
+        $usuario = $usuario .$dni;
+        
+    }
+    else {
+        $usuario = $usuario .$dia .$mes;
+    
+    }
+    echo "<br><br> usaurio con Dni/fecha: " .$usuario;
+
+    $usuario = $usuario . $terminacion;
+    echo "<br><br> Final usuario: " .$usuario;
 ?>
 
 </body>
