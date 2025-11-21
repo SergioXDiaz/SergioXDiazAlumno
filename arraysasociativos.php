@@ -98,6 +98,6 @@ echo "<h3>Media de todas las notas: " . number_format($media, 2) . "</h3>";
 
 ?>
 
-    ?>
+
 </body>
 </html>
