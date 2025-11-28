@@ -15,6 +15,11 @@
     $b = $suma;
     $suma = $a + $b;
 
+    //Si es el intercambio de un valor por otro, se requerirá una variable auxiliar.
+    //PALÍNDROMOS
+    // Usando strrev().
+
+    
     ?>
 </body>
 </html>
