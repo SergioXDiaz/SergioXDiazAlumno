@@ -16,8 +16,8 @@
     $contrasenas = ["P4\$word", "segura1234", "P4$w", "Mic$lave"];
 
     // Otra opcion
-    echo "21. Verficacion de contraseñas - Opcion2:<br>";
-    for ($i = 0)
+   // echo "21. Verficacion de contraseñas - Opcion2:<br>";
+    //for ($i = 0)
 
     ?>
 </body>
