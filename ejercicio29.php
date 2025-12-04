@@ -41,6 +41,9 @@
     }
     }
 
+
+
+    
     $suma = $matriz[0][0] + $matriz[1][1] + $matriz [2][2] + $matriz [3][3] + $matriz[4][4]; 
     echo $suma;
     ?>
