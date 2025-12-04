@@ -13,8 +13,6 @@
     //Hay dos formas de pasar los números al formulario, uno es get y el otro es post.
     //Si hago el siguiente método con un post.
     
-
-
     ?>
 </body>
 </html>
