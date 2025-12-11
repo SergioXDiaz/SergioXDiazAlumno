@@ -136,6 +136,7 @@ $Futbol= array(
         Usar el mismo código que el del array origen, para que se guarden los valores
         Imprimir un array es imprimir un array y muestra cómo queda el array.
 
+        // Tener papel para mirar las funciones
         
 
 ?>
