@@ -119,7 +119,7 @@ $Futbol= array(
         // 2.- Crea una variable "BuscarFacturación" que almacene el valor medio de la
         // facturacion de las 5 empresas. (calcular media de la facturacion) (hacer funcion para eliminar el euro)
     
-        // 3 .- 
+        // 3 .- Imprime 
 
 ?>
 
