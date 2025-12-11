@@ -119,7 +119,24 @@ $Futbol= array(
         // 2.- Crea una variable "BuscarFacturación" que almacene el valor medio de la
         // facturacion de las 5 empresas. (calcular media de la facturacion) (hacer funcion para eliminar el euro)
     
-        // 3 .- Imprime 
+        // 3 .- Imprime las empresas que tienen una facturacion mayor a la media
+
+        //4.- Introduce los datos de la siguiente empresa en tu array:
+
+        // Nombre: ExamenPHP
+        //CIF/NIF: A0123124
+        /* Teléfono: 641231924
+        Localidad: Écija
+        Facturacion: 3000 €
+
+
+        //5.- Buscar las empresas cuyo nombre contenga PHP
+        
+        //6.- Elimina la empresa con menor facturacion
+        Usar el mismo código que el del array origen, para que se guarden los valores
+        Imprimir un array es imprimir un array y muestra cómo queda el array.
+
+        
 
 ?>
 
