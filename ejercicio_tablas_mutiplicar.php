@@ -101,6 +101,26 @@ $Futbol= array(
 
     //d. - Elimina la información referente a la frecuencia.
     
+
+    // Generar un array para almacenar información de empresas, con la siguinte estructura:
+
+            //empresas
+        //nombre: nombre de las empresas
+        // CIF/NIF: X12345678
+        // Teléfono: 695313209
+        // Localidad: Ecija
+        // Facturacion: 3000€ (esto es una cadena y el simbolo esta puesto a posta)
+
+    //0.- Une todos los arrays anteriores
+    //1. - A partir del paso anterior, imprime  toda la información de la empresa con el siguiente formato:
+        // "La empresa [nombre empresa] con CIF [cif], tiene sede en [localidad] y
+        // la su factura es de [facturacion]."
+
+        // 2.- Crea una variable "BuscarFacturación" que almacene el valor medio de la
+        // facturacion de las 5 empresas. (calcular media de la facturacion) (hacer funcion para eliminar el euro)
+    
+        // 3 .- 
+
 ?>
 
 
