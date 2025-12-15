@@ -7,6 +7,7 @@ $usuario    = "root";           // Tu usuario (por defecto en local es 'root')
 $password   = "";               // Tu contraseña (por defecto en local suele estar vacía)
 $base_datos = "proyecto";  // El nombre de tu base de datos
 
+// MYSQLI_REPORT_ERROR TENERLO EN CUENTA PARA QUE NO MUESTRE UN FALLO FATAL.
 // 2. Crear la conexión
 $conn = mysqli_connect($servidor, $usuario, $password, $base_datos);
 
