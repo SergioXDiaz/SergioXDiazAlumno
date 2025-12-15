@@ -28,11 +28,11 @@ while($fila = mysqli_fetch_assoc($resultado)) { //asignacion dentro del while
 if (!$resultado) {
     die("Error en la consulta: " . mysqli_error($conn));
 }
-else {
 
     //Si el número de filas del objeto resultado es mayor a 0
     // es porque la consulta de la variable $sql ha sido exitosa.
     // En ese caso, se tendrá al menos una fila.
+
     
-}
+
 ?>
