@@ -33,6 +33,8 @@ if (!$resultado) {
     // es porque la consulta de la variable $sql ha sido exitosa.
     // En ese caso, se tendrá al menos una fila.
 
-    
+    // USAR EL css para poder crear cosas con los archivos de conexion de la tabla.
+
+    //Debo incrustar php con mysql
 
 ?>
