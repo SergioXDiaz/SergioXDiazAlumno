@@ -1,10 +1,43 @@
+
+<?php
+// 1. Incluimos la conexión
+require 'conexion.php';
+
+$mensaje = ""; // Variable para mostrar alertas al usuario
+
+// 2. Comprobamos si el formulario ha sido enviado
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
+    // Recogemos los datos del formulario
+    // mysqli_real_escape_string protege contra inyecciones SQL básicas
+    $nombre       = $_POST['']; // hay que usar el post, ya que hay una password implicada.
+    $email    = $_POST['nombre'];
+    $pass = $_POST['apellidos'];
+
+
+    // 3. Preparamos la consulta SQL de inserción
+    $sql = "INSERT INTO tabla1 (DNI, nombre, apellidos, edad) 
+            VALUES ('$dni', '$nombre', '$apellidos', $edad)";
+
+    // 4. Ejecutamos la consulta y verificamos
+    if (mysqli_query($conn, $sql)) {
+        $mensaje = '<div class="alert alert-success">¡Registro guardado con éxito!</div>';
+    } else {
+        $mensaje = '<div class="alert alert-danger">Error al guardar: ' . mysqli_error($conn) . '</div>';
+    }
+    
+    // Cerramos la conexión (opcional aquí, ya que el script termina)
+    mysqli_close($conn);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta name="author" content="Kodinger">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>My Login Page &mdash; Bootstrap 4 Login Page Snippet</title>
+	<title>Registro de usuario </title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/my-login.css">
 </head>
@@ -18,29 +51,29 @@
 					</div>
 					<div class="card fat">
 						<div class="card-body">
-							<h4 class="card-title">Register</h4>
+							<h4 class="card-title">Registro</h4>
 							<form method="POST" class="my-login-validation" novalidate="">
 								<div class="form-group">
-									<label for="name">Name</label>
+									<label for="name">Nombre</label>
 									<input id="name" type="text" class="form-control" name="name" required autofocus>
 									<div class="invalid-feedback">
-										What's your name?
+										¿Cuál es tu nombre?
 									</div>
 								</div>
 
 								<div class="form-group">
-									<label for="email">E-Mail Address</label>
+									<label for="email"> Dirección de email</label>
 									<input id="email" type="email" class="form-control" name="email" required>
 									<div class="invalid-feedback">
-										Your email is invalid
+										Tu dirección de email es inválida
 									</div>
 								</div>
 
 								<div class="form-group">
-									<label for="password">Password</label>
-									<input id="password" type="password" class="form-control" name="password" required data-eye>
+									<label for="pass">Password</label>
+									<input id="pass" type="password" class="form-control" name="password" required data-eye>
 									<div class="invalid-feedback">
-										Password is required
+										La Password es requerida
 									</div>
 								</div>
 
@@ -49,7 +82,7 @@
 										<input type="checkbox" name="agree" id="agree" class="custom-control-input" required="">
 										<label for="agree" class="custom-control-label">I agree to the <a href="#">Terms and Conditions</a></label>
 										<div class="invalid-feedback">
-											You must agree with our Terms and Conditions
+											Debes estar de acuerdo con los términos y condiciones
 										</div>
 									</div>
 								</div>

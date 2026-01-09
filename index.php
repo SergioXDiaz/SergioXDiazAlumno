@@ -1,3 +1,36 @@
+
+<?php
+// 1. Incluimos la conexión
+require 'conexion.php';
+
+$mensaje = ""; // Variable para mostrar alertas al usuario
+
+// 2. Comprobamos si el formulario ha sido enviado
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
+    // Recogemos los datos del formulario
+    // mysqli_real_escape_string protege contra inyecciones SQL básicas
+    $email       = $_POST['email']; // hay que usar el post, ya que hay una password implicada.
+    
+    $pass = $_POST['pass'];
+
+
+    // 3. Preparamos la consulta SQL de inserción
+    $sql_buscar = "INSERT INTO tabla1 (DNI, nombre, apellidos, edad) 
+            VALUES ('$dni', '$nombre', '$apellidos', $edad)";
+
+    // 4. Ejecutamos la consulta y verificamos
+    if (mysqli_query($conn, $sql)) {
+        $mensaje = '<div class="alert alert-success">¡Registro guardado con éxito!</div>';
+    } else {
+        $mensaje = '<div class="alert alert-danger">Error al guardar: ' . mysqli_error($conn) . '</div>';
+    }
+    
+    // Cerramos la conexión (opcional aquí, ya que el script termina)
+    mysqli_close($conn);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,25 +52,25 @@
 					</div>
 					<div class="card fat">
 						<div class="card-body">
-							<h4 class="card-title">Login</h4>
+							<h4 class="card-title">Login INWEB PHP</h4>
 							<form method="POST" class="my-login-validation" novalidate="">
 								<div class="form-group">
-									<label for="email">E-Mail Address</label>
+									<label for="email">Dreccion de E-Mail</label>
 									<input id="email" type="email" class="form-control" name="email" value="" required autofocus>
 									<div class="invalid-feedback">
-										Email is invalid
+										El email es invalido, por favor, introduzca uno correcto.
 									</div>
 								</div>
 
 								<div class="form-group">
 									<label for="password">Password
 										<a href="forgot.html" class="float-right">
-											Forgot Password?
+											¿Olvidó su contraseña?
 										</a>
 									</label>
-									<input id="password" type="password" class="form-control" name="password" required data-eye>
+									<input id="pass" type="pass" class="form-control" name="password" required data-eye>
 								    <div class="invalid-feedback">
-								    	Password is required
+								    	Contraseña es requerida 
 							    	</div>
 								</div>
 
@@ -54,7 +87,7 @@
 									</button>
 								</div>
 								<div class="mt-4 text-center">
-									Don't have an account? <a href="register.html">Create One</a>
+									¿Aún no tienes contraseña? <a href="register.html"> Crea una</a>
 								</div>
 							</form>
 						</div>
