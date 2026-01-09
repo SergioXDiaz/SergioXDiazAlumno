@@ -9,32 +9,48 @@ $mensaje = "";
 // Compruebo dos cosas: 
 //  1.- Que se haya envíado el formulario de "modificar.php" con POST
 //  2.- Que se haya pulsado el boton de actualizar, porque sino, no actualizo.
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['btn_actualizar'])) { //iSET ES UNA FUNCINO QUE ESTA EN MEMORIA Y COMPRUEBA QUE ALGO NO ES NULO.
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['btn_actualizar'])) {
     // Recogemos los datos (El DNI no se edita, se usa como referencia)
-    $dni       = $_POST['dni']; //Tiene que tener el mismo name que en el formulario y el id igual.
+    $dni       = $_POST['dni'];
     $nombre    = $_POST['nombre'];
     $apellidos = $_POST['apellidos'];
     $edad      = $_POST['edad'];
 
-    // Creamos la cadena con la setencia de dato. Aqui no uso 
+    // Creamos la cadena con la sentencia del UPDATE
     $sql_update = "UPDATE tabla1 SET nombre='$nombre', apellidos='$apellidos', edad=$edad 
     WHERE DNI='$dni'"; // Super importante el WHERE!!!!!!!!!! siempre buscaré por clave primaría.
-    //Hacer el where por clave primaria es fundamental para no liar la de dios.
 
-    if (mysqli_query($conn, $sql_update)) { //$con es variable creada de conexion
+    if (mysqli_query($conn, $sql_update)) {
         $mensaje = '<div class="alert alert-success alert-dismissible fade show" role="alert">
                         ¡Registro de '.$nombre.' actualizado correctamente!
                         <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                     </div>';
     } else {
         $mensaje = '<div class="alert alert-danger">Error al actualizar: ' . mysqli_error($conn) . '</div>';
-    } //el dni lo debo recoger del post sino no irá, si puedo llegar a hacer la query bien, lo realizaré, sino no.
+    }
+}elseif($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['btn_eliminar']) ){
+
+    $dni = $_POST['dni'];
+
+    // Creamos la cadena con la sentencia del DELETE
+
+    $sql_delete = "DELETE FROM tabla1 
+    WHERE DNI='$dni'"; // Super importante el WHERE!!!!!!!!!! siempre buscaré por clave primaría.
+   
+   if (mysqli_query($conn, $sql_delete)) {
+        $mensaje = '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                        ¡Registro de '.$dni.' eliminado con exito!
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>';
+    } else {
+        $mensaje = '<div class="alert alert-danger">Error al eliminar: ' . mysqli_error($conn) . '</div>';
+    }
 }
 
 // --- CONSULTA PARA MOSTRAR LA TABLA ---
-$sql = "SELECT DNI, nombre, apellidos, edad FROM tabla1"; //Tenemos que hacer un select all para que se muestren todos los datos
+$sql = "SELECT DNI, nombre, apellidos, edad FROM tabla1";
 $resultado = mysqli_query($conn, $sql);
-?> 
+?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -61,7 +77,9 @@ $resultado = mysqli_query($conn, $sql);
                                 <th>Nombre</th>
                                 <th>Apellidos</th>
                                 <th>Edad</th>
-                                <th class="text-center">Acción</th>
+                                <th class="text-center">Actualizar</th>
+                                <th class="text-center">Eliminar</th>
+                                
                             </tr>
                         </thead>
                         <tbody>
@@ -73,7 +91,7 @@ $resultado = mysqli_query($conn, $sql);
                                         <form action="modificar.php" method="POST" class="d-flex">
                                             <td>
                                                 <strong><?php echo $fila['DNI']; ?></strong>
-                                                <input type="hidden" name="dni" value="<?php echo $fila['DNI']; ?>">
+                                                <input type="hidden" name="dni" id="dni" value="<?php echo $fila['DNI']; ?>">
                                             </td>
                                             <td>
                                                 <input type="text" name="nombre" class="form-control form-control-sm" value="<?php echo $fila['nombre']; ?>" required>
@@ -89,9 +107,10 @@ $resultado = mysqli_query($conn, $sql);
                                                     Actualizar
                                                 </button>
                                             </td>
-                                             <td class="text-center">
+
+                                               <td class="text-center">
                                                 <button type="submit" name="btn_eliminar" class="btn btn-warning btn-sm shadow-sm">
-                                                    Actualizar
+                                                    Eliminar
                                                 </button>
                                             </td>
                                         </form>
@@ -99,7 +118,7 @@ $resultado = mysqli_query($conn, $sql);
                                     <?php
                                 }
                             } else {
-                                echo "<tr><td colspan='5' class='text-center'>No hay datos.</td></tr>";
+                                echo "<tr><td colspan='6' class='text-center'>No hay datos.</td></tr>";
                             }
                             ?>
                         </tbody>
