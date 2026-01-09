@@ -31,7 +31,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['btn_actualizar'])) { /
     } //el dni lo debo recoger del post sino no irá, si puedo llegar a hacer la query bien, lo realizaré, sino no.
 }
 
-// --- CONSULTA PARA MOSTRAR LA TABLA ---
+// --- CONSULTA PARA MOSTRAR LA TABLA --- ¿Porque necesito realizar una consulta? Porque necesito traerme primero todos los datos para que sepa el usuario
+// que datos puede modificar.
 $sql = "SELECT DNI, nombre, apellidos, edad FROM tabla1"; //Tenemos que hacer un select all para que se muestren todos los datos
 $resultado = mysqli_query($conn, $sql);
 ?> 
@@ -66,14 +67,14 @@ $resultado = mysqli_query($conn, $sql);
                         </thead>
                         <tbody>
                             <?php
-                            if ($resultado && mysqli_num_rows($resultado) > 0) {
+                            if ($resultado && mysqli_num_rows($resultado) > 0) { // si es row, me llevara a 0, no puedo pedirle a una tabla datos que no existen
                                 while($fila = mysqli_fetch_assoc($resultado)) {
                                     ?>
                                     <tr>
                                         <form action="modificar.php" method="POST" class="d-flex">
                                             <td>
                                                 <strong><?php echo $fila['DNI']; ?></strong>
-                                                <input type="hidden" name="dni" value="<?php echo $fila['DNI']; ?>">
+                                                <input type="hidden" name="dni" value="<?php echo $fila['DNI']; ?>"> <!-- No tiene sentido que dejemos al usuario que toque el dni de una tabla , a no ser que sea un administrador -->
                                             </td>
                                             <td>
                                                 <input type="text" name="nombre" class="form-control form-control-sm" value="<?php echo $fila['nombre']; ?>" required>
