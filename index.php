@@ -10,15 +10,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     // Recogemos los datos del formulario
     // mysqli_real_escape_string protege contra inyecciones SQL básicas
-    $email       = $_POST['email']; // hay que usar el post, ya que hay una password implicada.
+    $email = $_POST['email']; // hay que usar el post, ya que hay una password implicada.
     
     $pass = $_POST['pass'];
 
 
     // 3. Preparamos la consulta SQL de inserción
-    $sql_buscar = "INSERT INTO tabla1 (DNI, nombre, apellidos, edad) 
-            VALUES ('$dni', '$nombre', '$apellidos', $edad)";
+    $sql = "SELECT * FROM usuario
+		WHERE email = '$email' AND pass = MD5('$pass')";
 
+	if (mysqli_num_rows(result: $resultado) == 1) {
+		//Usuario válido
+		session_start();
+
+		$usuario =mysqli_fetch_assoc(result: $resultado);
+
+		$_SESSION['id_usuario'] = $usuario['id'];
+		$_SESSION['nombre'] = $usuario['nombre'];
+		$_SESSION['rol'] = $usuario['rol'];
+
+	}
+
+	// Falta implementar un panel de control para podre manejar estas sesiones de forma correcta.
+
+	// Implemmentar un boton de logout para destruir la sesión.
+	
     // 4. Ejecutamos la consulta y verificamos
     if (mysqli_query($conn, $sql)) {
         $mensaje = '<div class="alert alert-success">¡Registro guardado con éxito!</div>';
