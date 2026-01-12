@@ -1,7 +1,15 @@
 <?php
 session_start();
-if (isset($_SESSION['rol'])){
-        if($_SESSION['rol'] == 1){
+
+if (
+    !isset($_SESSION['id_usuario']) ||
+    !isset($_SESSION['nombre']) ||
+    !isset($_SESSION['rol']) ||
+    $_SESSION['rol'] != 1
+) {
+    header("Location: index.php");
+    exit;
+
 
     //Incluyo la conclusión como siempre
     require 'conexion.php';
@@ -57,7 +65,7 @@ if (isset($_SESSION['rol'])){
     $sql = "SELECT DNI, nombre, apellidos, edad FROM tabla1";
     $resultado = mysqli_query($conn, $sql);
 }
-}
+
 ?>
 
 <!DOCTYPE html>
